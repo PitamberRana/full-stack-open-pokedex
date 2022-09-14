@@ -8,7 +8,6 @@
     "start-prod": "node app.js",
     "test": "jest",
     "eslint": "eslint --fix'./**/*.{js,jsx}'",
-    "prod": "webpack-dev-server --open --mode production",
     "build": "webpack --mode production",
     "cypress:open": "cypress open",
     "test:e2e": "cross-env NODE_ENV=test node app.js"

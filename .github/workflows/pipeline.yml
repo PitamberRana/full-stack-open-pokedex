@@ -41,3 +41,4 @@ jobs:
           heroku_email: "pitamber11rana@gmail.com"
           healthcheck: "https://pokedex30309.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true

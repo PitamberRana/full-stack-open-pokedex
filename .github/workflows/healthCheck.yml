@@ -4,7 +4,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "10 14 * 9 *
+    - cron: " 14 14 * 9 * "
 jobs:
   health_check:
     runs-on: ubuntu-20.04

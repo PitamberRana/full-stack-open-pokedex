@@ -63,5 +63,3 @@ jobs:
           COMMIT_MESSAGES: ${{ join(github.event.commits.*.message) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-
-        run: echo "$COMMIT_MESSAGES"

@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -35,9 +38,15 @@ jobs:
 
       - name: deploy to heroku
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        if: ${{ github.event_name == 'push' }}
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "pokedex30309" #Must be unique in Heroku
           heroku_email: "pitamber11rana@gmail.com"
           healthcheck: "https://pokedex30309.herokuapp.com/health"
           checkstring: "ok"
+<<<<<<< HEAD
+=======
+          delay: 5
+          rollbackonhealthcheckfailed: true
+>>>>>>> fc8b45d3337bc32b70c2d4701b1314a0acf356d8

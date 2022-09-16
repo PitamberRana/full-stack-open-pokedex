@@ -69,13 +69,13 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1.0.4
         if: success()
         with:
-          severity: error
-          details: Test Succeeded!
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-          # severity: info
-          # text: New version of pokedex deployed
-          # description: to https://pokedex30309.herokuapp.com/ by unknown
+          # severity: error
+          # details: Test Succeeded!
           # webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          severity: info
+          text: New version of pokedex deployed
+          description: to https://pokedex30309.herokuapp.com/ by unknown
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test Failure
         uses: rjstone/discord-webhook-notify@v1.0.4
         if: failure()

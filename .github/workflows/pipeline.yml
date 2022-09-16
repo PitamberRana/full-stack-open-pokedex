@@ -45,8 +45,19 @@ jobs:
           heroku_email: "pitamber11rana@gmail.com"
           healthcheck: "https://pokedex30309.herokuapp.com/health"
           checkstring: "ok"
-<<<<<<< HEAD
-=======
           delay: 5
           rollbackonhealthcheckfailed: true
->>>>>>> fc8b45d3337bc32b70c2d4701b1314a0acf356d8
+
+  tag_release:
+    needs: [simple_deployment_pipeline]
+    runs-on: ubuntu-20.04
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      -uses: actions/checkout@v3
+       with:
+          fetch-depth: '0'
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.36.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true

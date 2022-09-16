@@ -13,10 +13,9 @@ jobs:
     #     uses: jtalk/url-health-check-action@v2
     #     with:
     #       url: https://obscure-ocean-02441.herokuapp.com/health
-      steps:
-        - name: URL Health Check
-          uses: Jtalk/url-health-check-action@v2.2
-          with:
+    steps:
+      - name: URL Health Check
+        uses: Jtalk/url-health-check-action@v2.2
+        with:
           # Check the following URLs one by one sequentially
-            url: https://example.com|http://example.com
-
+          url: https://example.com|http://example.com

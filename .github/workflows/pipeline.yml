@@ -69,7 +69,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1.0.4
         if: success()
         with:
-          # severity: error
+          # severity: info
           # details: Test Succeeded!
           # webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           severity: info
